@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 18, 18, 18;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 22 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 100% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 22 100% 50%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 22 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-white font-poppins;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bebas;
+  }
+}
+
+@layer utilities {
+  .font-bebas {
+    font-family: var(--font-bebas);
+  }
+  
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent;
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(255, 106, 0, 0.3);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(13, 27, 42, 0.3);
+  }
+}
