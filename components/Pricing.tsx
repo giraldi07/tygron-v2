@@ -84,7 +84,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 relative overflow-hidden">
+    <section id="pricing" className="scroll-mt-24 py-20 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black to-secondary-900/30" />
       

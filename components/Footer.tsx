@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { TowerControl as GameController, Instagram, MessageCircle, Mail, Phone, MapPin, Clock, Trophy } from 'lucide-react';
+import Image from 'next/image';
+
 
 const Footer = () => {
   const [ref, inView] = useInView({
@@ -79,12 +81,21 @@ const Footer = () => {
           >
             {/* Logo */}
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary to-orange-400 rounded-xl flex items-center justify-center">
-                <GameController className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 flex items-center justify-center">
+                <a href="#home" className="block w-32 mb-6">
+                  <Image
+                    src="/images/tygron-logo.png"
+                    alt="Tygron Logo"
+                    width={50} // ukuran default desktop
+                    height={50} // biar ratio logo tetap bagus
+                    priority // preload untuk logo
+                    className="object-contain"
+                  />
+                </a>
               </div>
               <div>
-                <h3 className="text-2xl font-bebas text-white">TYGRON</h3>
-                <p className="text-sm text-primary -mt-1">PLAYGROUND & LOUNGE</p>
+                {/* <h3 className="text-2xl font-bebas text-white">TYGRON</h3>
+                <p className="text-sm text-primary -mt-1">PLAYGROUND & LOUNGE</p> */}
               </div>
             </div>
             
