@@ -14,6 +14,15 @@ const Events = () => {
 
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+  // Function to format date consistently on both server and client
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
   const upcomingEvents = [
     {
       id: 1,
@@ -193,7 +202,7 @@ const Events = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center text-gray-300 text-sm">
                     <Calendar className="w-4 h-4 text-primary mr-2" />
-                    {new Date(event.date).toLocaleDateString()}
+                    {formatDate(event.date)}
                   </div>
                   <div className="flex items-center text-gray-300 text-sm">
                     <Clock className="w-4 h-4 text-primary mr-2" />
